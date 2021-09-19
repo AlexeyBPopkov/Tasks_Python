@@ -3,22 +3,28 @@ class Animal:
         pass
 
 class Behemoth(Animal):
+    def __init__(self, name):
+        self.name = name
     def voice(self):
-        print("I'm a behemoth")
+        print("I'm a behemoth with name " + self.name)
 
 class Dog(Animal):
+    def __init__(self, name):
+        self.name = name
     def voice(self):
-        print("I'm a dog")
+        print("I'm a dog with name " + self.name)
 
 class Cat(Animal):
+    def __init__(self, name):
+        self.name = name
     def voice(self):
-        print("I'm a cat")
+        print("I'm a cat with name " + self.name)
 
-behemoth = Behemoth()
+behemoth = Behemoth('Big')
 behemoth.voice()
 
-dog = Dog()
+dog = Dog('Snuppy')
 dog.voice()
 
-cat = Cat()
+cat = Cat('Kitty')
 cat.voice()
