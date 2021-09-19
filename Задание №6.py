@@ -6,7 +6,7 @@ class Behemoth(Animal):
     def __init__(self, name):
         self.name = name
     def voice(self):
-        print("I'm a behemoth with name " + self.name)
+        print("I'm a behemoth with name %s" % self.name)
 
 class Dog(Animal):
     def __init__(self, name):
@@ -20,11 +20,11 @@ class Cat(Animal):
     def voice(self):
         print("I'm a cat with name " + self.name)
 
-behemoth = Behemoth('Big')
-behemoth.voice()
+Big = Behemoth('Big')
+Big.voice()
 
-dog = Dog('Snuppy')
-dog.voice()
+Snuppy = Dog('Snuppy')
+Snuppy.voice()
 
-cat = Cat('Kitty')
-cat.voice()
+Kitty = Cat('Kitty')
+Kitty.voice()
