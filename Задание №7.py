@@ -4,6 +4,7 @@ class Animal:
         pass
     def count():
         print('Current population of animals: %s animals' % Animal.counter)
+    count = staticmethod(count)
 
 class Behemoth(Animal):
     def __init__(self, name):
