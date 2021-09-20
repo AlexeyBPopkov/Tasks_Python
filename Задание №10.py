@@ -19,7 +19,7 @@ class Search(unittest.TestCase):
         results = self.drv.find_element_by_id('search')
         links = results.find_elements_by_tag_name("a")
         href = links[0].get_attribute("href")
-        if href == 'https://selenide.org/':
+        if '://selenide.org' in href:
             print(f'Первый результат поиска по всему Интернету: {href}, как и ожидалось.')
         else:
             print(f'Первый результат поиска по всему Интернету: {href}, чего мы не ожидали!')
@@ -31,7 +31,7 @@ class Search(unittest.TestCase):
                 break
         assert 'Google' in self.drv.title
         results = self.drv.find_elements_by_class_name('fxgdke')
-        if results[0].text == 'selenide.org':
+        if 'selenide.org' in results[0].text:
             print(f'Первый результат поиска изображений неким образом связан с сайтом selenide.org, как и ожидалось.')
         else:
             print(f'Первый результат поиска изображений неким образом связан с сайтом: {results[0].text}, чего мы не ожидали!')
