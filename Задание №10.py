@@ -16,9 +16,9 @@ class Search(unittest.TestCase):
         elm.send_keys(Keys.RETURN)
         time.sleep(1)
         assert 'No results found' not in self.drv.page_source
-        results = self.drv.find_elements_by_css_selector('div.g')
-        link = results[0].find_element_by_tag_name("a")
-        href = link.get_attribute("href")
+        results = self.drv.find_element_by_id('search')
+        links = results.find_elements_by_tag_name("a")
+        href = links[0].get_attribute("href")
         if href == 'https://selenide.org/':
             print(f'Первый результат поиска по всему Интернету: {href}, как и ожидалось.')
         else:
@@ -32,9 +32,9 @@ class Search(unittest.TestCase):
         assert 'Google' in self.drv.title
         results = self.drv.find_elements_by_class_name('fxgdke')
         if results[0].text == 'selenide.org':
-            print(f'Первый результат поиска изображений ссылается на сайт selenide.org, как и ожидалось.')
+            print(f'Первый результат поиска изображений неким образом связан с сайтом selenide.org, как и ожидалось.')
         else:
-            print(f'Первый результат поиска изображений ссылается на сайт: {results[0].text}, чего мы не ожидали!')
+            print(f'Первый результат поиска изображений неким образом связан с сайтом: {results[0].text}, чего мы не ожидали!')
         top_menu_items = self.drv.find_elements_by_class_name('NZmxZe')
         for item in top_menu_items:
             if item.text == "All" or item.text == "Все":
@@ -42,9 +42,9 @@ class Search(unittest.TestCase):
                 time.sleep(.5)
                 break
         assert 'Google' in self.drv.title
-        results = self.drv.find_elements_by_css_selector('div.g')
-        link = results[0].find_element_by_tag_name("a")
-        href = link.get_attribute("href")
+        results = self.drv.find_element_by_id('search')
+        links = results.find_elements_by_tag_name("a")
+        href = links[0].get_attribute("href")
         if href == 'https://selenide.org/':
             print(f'Первый результат поиска по всему Интернету: {href}, как и ожидалось.')
         else:
